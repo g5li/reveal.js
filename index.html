@@ -26,11 +26,11 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<section><b>引子</b></section>
+					<section><b>哲学三问</b></section>
 					<section>
-						<p class="fragment" data-fragment-index="1">我是谁？</p>
+<!--						<p class="fragment" data-fragment-index="1">我是谁？</p>
 						<p class="fragment" data-fragment-index="2">从哪里来？</p>
-						<p class="fragment" data-fragment-index="3">往哪里去？</p>
+						<p class="fragment" data-fragment-index="3">往哪里去？</p> -->
 					</section>
 				</section>
 				<section>
@@ -51,14 +51,15 @@ function aFunction(value1, value2)
 					<section>
 						<b>三个问题</b>
 					</section>
-					<section>
+<!--					<section>
 						<p class="fragment" data-fragment-index="1">输入数据是什么？</p>
 						<p class="fragment" data-fragment-index="2">做了什么操作？</p>
-						<p class="fragment" data-fragment-index="3">返回数据是什么？</p>
+						<p class="fragment" data-fragment-index="3">返回数据是什么？</p> -->
 					</section>
 				</section>
 
 				<section>
+					<section>函数 和</section>
 					<section>
 					<pre><code class="hljs" data-line-numbers="3,6,9,12">
 // 输入数据为两个整数
@@ -76,8 +77,9 @@ int value3 = aFunction(1, 2)
 					</section>
 
 					<section>
-					<p>近似平方根</p>
+					<p>真实代码</p>
 					<pre><code class="hljs" data-line-numbers="2,16">
+// 近似平方根
 float Q_rsqrt( float number )
 {
 	long i;
@@ -86,201 +88,31 @@ float Q_rsqrt( float number )
 
 	x2 = number * 0.5F;
 	y  = number;
-	i  = * ( long * ) &y;                       // evil floating point bit level hacking
-	i  = 0x5f3759df - ( i >> 1 );               // what the fuck?
+	// evil floating point bit level hacking
+	i  = * ( long * ) &y;
+	// what the fuck?
+	i  = 0x5f3759df - ( i >> 1 );   
 	y  = * ( float * ) &i;
-	y  = y * ( threehalfs - ( x2 * y * y ) );   // 1st iteration
-//	y  = y * ( threehalfs - ( x2 * y * y ) );   // 2nd iteration, this can be removed
+	// 1st iteration
+	y  = y * ( threehalfs - ( x2 * y * y ) );
 
 	return y;
 }
 </code></pre>
 					</section>
 				</section>
-				<section>
-					<section>
-					<p>数据库</p>
-					<pre><code class="hljs">
-CREATE TABLE `student` (
-  	`given_name` VARCHAR(50),
-  	`surname` VARCHAR(50),
-	`birthday` DATE
-);
-INSERT `student` VALUES(
- '广', '李', '2000-01-01',
- '四', '李', '1985-10-30'
-);
-
-CREATE TABLE `teacher` (
-  	`given_name` VARCHAR(50),
-  	`surname` VARCHAR(50),
-	`birthday` DATE
-);
-INSERT `student` VALUES(
- '三', '张', '1990-07-07'
-);
-</code></pre>
-					</section>
-					<section>
-						<p>HashTable</p>
-						<pre><code class="hljs" data-line-numbers="2,7,12">
-HashMap aStudent = new HashMap()
-aStudent.set("given_name", "广")
-aStudent.set("surname", "李")
-aStudent.set("birthday", "2000-01-01")
-
-HashMap bTeacher = new HashMap()
-bTeacher.set("given_name", "四")
-bTeacher.set("surname", "李")
-bTeacher.set("birthday", "1985-10-30")
-
-HashMap aTeacher = new HashMap()
-aTeacher.set("given_name", "三")
-aTeacher.set("surname", "张")
-aTeacher.set("birthday", "1990-07-07")
-</code></pre>
-					</section>
-					<section>
-						<p>Object</p>
-					<pre><code class="hljs" data-line-numbers="2,7,12">
-Student aStudent = new Student()
-aStudent.given_name = "广"
-aStudent.surname = "李"
-aStudent.birthday = "2000-01-01"
-
-Student bStudent = new Student()
-bStudent.given_name = "四"
-bStudent.surname = "李"
-bStudent.birthday = "1985-10-30"
-
-Teacher aTeacher = new Teacher()
-aTeacher.given_name = "三"
-aTeacher.surname = "张"
-aTeacher.birthday = "1990-07-07"
-</code></pre>
-					</section>
+ 				<section>
+					<section>技术债</section>
+					<section>一个很长的函数</section>
 				</section>
-				<section>
-					<section>Active Record</section>
-					<section data-markdown>
-						<script type="text/template">
-							- 特点一
-							- 特点二
-						</script>
-					</section>
-					<section data-markdown>
-						<script type="text/template">
-							#### 一个对象
-							- 属性 承载数据表中的一条数据 <!-- .element: class="fragment" data-fragment-index="1" -->
-							- 方法 承载对该条数据的操作 <!-- .element: class="fragment" data-fragment-index="2" -->
-								- create <!-- .element: class="fragment" data-fragment-index="3" -->
-								- read <!-- .element: class="fragment" data-fragment-index="3" -->
-								- update <!-- .element: class="fragment" data-fragment-index="3" -->
-								- delete <!-- .element: class="fragment" data-fragment-index="3" -->
-						</script>
-					</section>
-
-					<section>
-						<p>Active Record Object</p>
-						<pre><code class="hljs" data-line-numbers="7">
-Student aStudent = new Student()
-aStudent.given_name = "五"
-aStudent.surname = "赵"
-aStudent.birthday = "2000-01-01"
-
-aStudent.save()
-</code></pre>
-					</section>
-					<section data-markdown>
-						<script type="text/template">
-							#### Framework
-							- Ruby on Rails <!-- .element: class="fragment" data-fragment-index="1" -->
-							- Laravel for PHP <!-- .element: class="fragment" data-fragment-index="1" -->
-							- Django for Python <!-- .element: class="fragment" data-fragment-index="1" -->
-						</script>
-					</section>
-
-					<section data-markdown>
-						<script type="text/template">
-							#### 优势
-							- 代码层级少
-							- 使用灵活
-
-							适合当前 Container 部署 -- Micro Service 项目 <!-- .element: class="fragment" data-fragment-index="1" -->
-						</script>
-					</section>
+ 				<section>
+	 				<section>要改写吗？</section>
+	 				<section>微优化</section>
 				</section>
-
-				<section>
-					<section>Data Mapper</section>
-					<section>
-
-					</section>
+ 				<section>
+	 				<section>微重构</section>
 				</section>
-				<section>
-					<span class="fragment fade-in">
-						<span class="fragment fade-out">I'll fade in, then out</span>
-					</span>
-				</section>
-				<section>
-					<p class="fragment grow">grow</p>
-					<p class="fragment shrink">shrink</p>
-					<p class="fragment fade-out">fade-out</p>
-					<p class="fragment fade-up">fade-up (also down, left and right!)</p>
-					<p class="fragment fade-in-then-out">fades in, then out when we move to the next step</p>
-					<p class="fragment fade-in-then-semi-out">fades in, then obfuscate when we move to the next step</p>
-					<p class="fragment highlight-current-blue">blue only once</p>
-					<p class="fragment highlight-red">highlight-red</p>
-					<p class="fragment highlight-green">highlight-green</p>
-					<p class="fragment highlight-blue">highlight-blue</p>
-				</section>
-				<section>Single Horizontal Slide</section>
-				<section>
-					<section>Vertical Slide 1</section>
-					<section>Vertical Slide 2</section>
-				</section>
-				<section data-markdown>
-					<script type="text/template">
-						<!-- .slide: data-background="#ff0000" -->
-						Markdown content
-					</script>
-				</section>
-				<section data-markdown>
-					<textarea data-template>
-						## Page title
-
-						A paragraph with some text and a [link](http://hakim.se).
-					</textarea>
-				</section>
-				<section data-markdown>
-					<script type="text/template">
-						- Item 1 <!-- .element: class="fragment" data-fragment-index="1" -->
-						- Item 2 <!-- .element: class="fragment" data-fragment-index="3" -->
-						- Item 3 <!-- .element: class="fragment" data-fragment-index="2" -->
-					</script>
-				</section>
-				<section data-transition="zoom">
-					<h2>This slide will override the presentation transition and zoom!</h2>
-				</section>
-
-				<section data-transition-speed="fast">
-					<h2>Choose from three transition speeds: default, fast or slow!</h2>
-				</section>
-				<section data-transition="slide">
-					The train goes on …
-				</section>
-				<section data-transition="slide">
-					and on …
-				</section>
-				<section data-transition="slide-in fade-out">
-					and stops.
-				</section>
-				<section data-transition="fade-in slide-out">
-					(Passengers entering and leaving)
-				</section>
-				<section data-transition="slide">
-					And it starts again.
-				</section>
+				<section>Thanks!!!</section>
 			</div>
 		</div>
 
