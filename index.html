@@ -28,14 +28,15 @@
 				<section>
 					<section><b>哲学三问</b></section>
 					<section>
-<!--						<p class="fragment" data-fragment-index="1">我是谁？</p>
-						<p class="fragment" data-fragment-index="2">从哪里来？</p>
-						<p class="fragment" data-fragment-index="3">往哪里去？</p> -->
+						<p class="fragment fade-in-then-out" data-fragment-index="1">我是谁？</p>
+						<p class="fragment fade-in-then-out" data-fragment-index="2">从哪里来？</p>
+						<p class="fragment fade-in" data-fragment-index="3">往哪里去？</p>
 					</section>
 				</section>
 				<section>
-					<p>一段伪代码</p>
-					<pre><code class="hljs" data-line-numbers="2,5,8">
+					<section>
+						<p>函数</p>
+						<pre class="fragment" data-fragment-index="1"><code class="hljs" data-line-numbers="2,5,8">
 // 声明一个函数和它的输入数据
 function aFunction(value1, value2)
 {
@@ -46,22 +47,16 @@ function aFunction(value1, value2)
 	return result
 }
 </code></pre>
-				</section>
-				<section>
-					<section>
-						<b>三个问题</b>
-					</section>
-<!--					<section>
-						<p class="fragment" data-fragment-index="1">输入数据是什么？</p>
-						<p class="fragment" data-fragment-index="2">做了什么操作？</p>
-						<p class="fragment" data-fragment-index="3">返回数据是什么？</p> -->
+						<p class="fragment fade-in-then-semi-out" data-fragment-index="2">输入数据是什么？</p>
+						<p class="fragment fade-in-then-semi-out" data-fragment-index="3">做了什么操作？</p>
+						<p class="fragment fade-in-then-semi-out" data-fragment-index="4">返回数据是什么？</p>
 					</section>
 				</section>
 
 				<section>
-					<section>函数 和</section>
 					<section>
-					<pre><code class="hljs" data-line-numbers="3,6,9,12">
+						<p>函数 和</p>
+						<pre><code class="hljs" data-line-numbers="3,6,9,12">
 // 输入数据为两个整数
 function int aFunction(int value1, int value2)
 {
@@ -72,14 +67,13 @@ function int aFunction(int value1, int value2)
 	return result
 }
 
-int value3 = aFunction(1, 2)
+int value3 = aFunction(11, 31)
 </code></pre>
 					</section>
 
 					<section>
-					<p>真实代码</p>
-					<pre><code class="hljs" data-line-numbers="2,16">
-// 近似平方根
+						<pre><code class="hljs" data-line-numbers="3,13-14,19">
+// 平方根倒数的近似值
 float Q_rsqrt( float number )
 {
 	long i;
@@ -101,16 +95,36 @@ float Q_rsqrt( float number )
 </code></pre>
 					</section>
 				</section>
+				<section>
+					<section>调用方</section>
+					<section>
+						<p>有个问题无须作答</p>
+					</section>
+					<section>
+						<iframe width="100%" height="500" data-src="http://man7.org/linux/man-pages/man3/sqrt.3.html" data-preload></iframe>
+					</section>
+					<section>
+						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Function_machine2.svg/500px-Function_machine2.svg.png">
+					</section>
+					<section>
+						<h4>解释性语音的<b>混乱自由</b></h4>
+						<p class="fragment fade-in-then-semi-out">可信的文档</p>
+						<p class="fragment fade-in-then-semi-out">自我限制</p>
+					</section>
+				</section>
  				<section>
-					<section>技术债</section>
+					<section>实现方</section>
 					<section>一个很长的函数</section>
-				</section>
- 				<section>
-	 				<section>要改写吗？</section>
-	 				<section>微优化</section>
-				</section>
- 				<section>
-	 				<section>微重构</section>
+					<section>技术债</section>
+	 				<section>中间变量通过函数获得</section>
+					<section>
+						<iframe data-src="https://laravel.com/docs/5.5/helpers#available-methods"
+						width="100%" height="600"></iframe>
+					</section>
+					<section>
+						<p>微优化</p>
+						<p class="fragment" data-fragment-index="1">三省吾身</p>
+					</section>
 				</section>
 				<section>Thanks!!!</section>
 			</div>
